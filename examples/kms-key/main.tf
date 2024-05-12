@@ -1,5 +1,5 @@
 module "kms" {
-  source = "../../modules/kms-key"
+  source = "../../modules/key"
   name   = "test-key"
   aliases = [
     "alias/eks"

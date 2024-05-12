@@ -20,7 +20,7 @@ resource "aws_kms_key" "this" {
 }
 
 module "policy" {
-  source = "../kms-key-policy"
+  source = "../key-policy"
   count  = var.policy != null ? 1 : 0
 
   kms_key = aws_kms_key.this.id
@@ -30,7 +30,7 @@ module "policy" {
 }
 
 module "alias" {
-  source   = "../kms-alias"
+  source   = "../alias"
   for_each = toset(var.aliases)
 
   kms_key = aws_kms_key.this.id
@@ -38,7 +38,7 @@ module "alias" {
 }
 
 module "grant" {
-  source   = "../kms-grant"
+  source   = "../grant"
   for_each = var.grants
 
   kms_key           = aws_kms_key.this.id

@@ -21,10 +21,10 @@
 Terraform 모듈을 사용하여 아래 서비스를 관리 합니다.
 
 - **AWS KMS (Key Management Service)**
-  - kms-key
-  - kms-grant
-  - kms-key-policy
-  - kms-alias
+  - key
+  - grant
+  - key-policy
+  - alias
 
 ## Usage
 
